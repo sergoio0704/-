@@ -75,7 +75,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bitrix24.cs" />
+    <Compile Include="Clients\Bitrix24Client.cs" />
+    <Compile Include="Clients\HttpClient.cs" />
+    <Compile Include="Dto\ContactDto.cs" />
+    <Compile Include="Dto\LeadDto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
