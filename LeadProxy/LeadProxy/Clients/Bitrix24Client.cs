@@ -84,11 +84,12 @@ namespace LeadProxy.Clients
         public string AddLead()
         {
             RefreshTokens();
-            HttpWebRequest request = HttpClient.CreateWebRequest($"{ _portalUri}/rest/crm.lead.add?auth={_accessToken}");
-
+            string url = $"{ _portalUri}/rest/crm.lead.add";
+            HttpWebRequest request = HttpClient.CreateWebRequest(url);
+            request.Headers.Add("Authorization", "Bearer " + _accessToken);
             var data = new LeadCreateRequest
             {
-                fields = new LeadDto { TITLE = "Hello", NAME = "Roma", OPPORTUNITY = 1233, LAST_NAME = "Павлович" }
+                fields = new LeadDto { TITLE = "dfddddd", NAME = "Roma", OPPORTUNITY = 1233, LAST_NAME = "Павлович" }
             };
             var contentText = JsonConvert.SerializeObject(data);
             return HttpClient.RequestPost(request, contentText);
