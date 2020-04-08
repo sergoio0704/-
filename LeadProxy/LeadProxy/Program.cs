@@ -17,11 +17,11 @@ namespace LeadProxy
             Bitrix24Client portalClient1 = new Bitrix24Client(BX_Portal, BX_ClientID, BX_ClientSecret, username, password);
             
             //1
-            List<LeadDto> leads = portalClient1.GetLeads();
-            leads.ForEach(l => Console.WriteLine(l.TITLE));
+            //List<LeadDto> leads = portalClient1.GetLeads();
+            //leads.ForEach(l => Console.WriteLine(l.TITLE));
 
             //2
-            portalClient1.GetContactById(2);
+            //portalClient1.GetContactById(2);
             
             //3
             portalClient1.AddLead();

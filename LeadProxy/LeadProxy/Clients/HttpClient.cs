@@ -19,6 +19,8 @@ namespace LeadProxy.Clients
         public static string RequestPost( HttpWebRequest webRequest, string body )
         {
             webRequest.Method = WebRequestMethods.Http.Post;
+            webRequest.Accept = "application/json; charset=utf-8";
+            webRequest.ContentType = "application/json; charset=utf-8";
             return GetResponse( webRequest, StringToBytes( body ) );
         }
 
